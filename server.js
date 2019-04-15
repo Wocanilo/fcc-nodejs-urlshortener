@@ -62,7 +62,7 @@ app.post("/api/shorturl/new", function(req, res){
          // We create the document and assign it an unique id
          Link.create({url: req.body.url, id: c}, function(err, data){
             if(err) res.json({"error": "internal error"});
-            res.json({"original_url": req.body.url, "short_url": c});
+            else res.json({"original_url": req.body.url, "short_url": c});
           });
        });
       }
